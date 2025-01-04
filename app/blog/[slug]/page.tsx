@@ -18,9 +18,8 @@ async function getData(slug: string)   {
 export default async function BlogArticle ({
     params
 }: {
-    params: {slug: string};
-}) {
-    const data: fullBlog = await getData(params.slug);
+    params: {slug: string }; }) {
+    const data: fullBlog = await getData(   params.slug);
     
     console.log(data);  
 
@@ -30,7 +29,7 @@ export default async function BlogArticle ({
     <div className="mt-8">
         <h1>
             <span className="block text-base text-center text-blue-800 font-semibold tracking-wide uppercase">
-                ASHHAD's - BLOG
+                {"ASHHAD's - BLOG"}
             </span>
             <span className="mt-2 block text-3xl text-center leading-7 font-bold tracking-tight sm:text-6xl">{data.title}</span>
         </h1>
