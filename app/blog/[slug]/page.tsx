@@ -18,9 +18,10 @@ async function getData(slug: string): Promise<fullBlog | null> {
 export default async function BlogArticle({
   params,
 }: {
-  params: { slug: string };
+  params: Promise< { slug: string }>;
 }) {
-  const data = await getData(params.slug);
+  const blogSlug = (await (params)).slug
+  const data = await getData(blogSlug);
 
   if (!data) {
     return (
