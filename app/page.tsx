@@ -1,5 +1,7 @@
 
-import { simpleBlogCard } from "@/lib/interface";
+"use client"
+import { simpleBlogCard } from "./lib/interface"; // Assuming the interface file is located in the same directory as the current file//+
+
 import { client, urlFor,  } from "./lib/sanity";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -20,7 +22,7 @@ const query =  `*[_type == 'blog'] | order(_createdAt desc) {
 }
 
 export default async function Home() {
-  const data: simpleBlogCard[] = await getData();
+  const data:simpleBlogCard[] = await getData();
 
  console.log( data);  
   return (

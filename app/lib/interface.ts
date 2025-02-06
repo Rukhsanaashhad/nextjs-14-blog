@@ -1,3 +1,4 @@
+"use client";
 export interface simpleBlogCard {
     title: string;
     smallDescription: string;
