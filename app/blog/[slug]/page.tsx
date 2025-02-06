@@ -19,6 +19,7 @@ async function getData(slug: string) {
   const data = await client.fetch(query);
   return data;
 }
+
 interface BlogArticleProps {  
   params: { slug: string };  
 }
