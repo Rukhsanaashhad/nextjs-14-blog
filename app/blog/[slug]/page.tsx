@@ -1,11 +1,11 @@
-"use client "
+
 
 import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
-export const revalidate = 30; // revalidate at most 30 seconds
+
 
 async function getData(slug: string) {
   const query = `
@@ -20,12 +20,17 @@ async function getData(slug: string) {
   return data;
 }
 
-interface BlogArticleProps {  
-  params: { slug: string };  
-}
+export default async function BlogArticle ({
+  params,
+}: {
+  params: {slug: string};
+}) {
+  const data:fullBlog =await getData(params.slug);
 
-export default async function BlogArticle({ params }: BlogArticleProps) { 
-  const data: fullBlog = await getData(params.slug);  
+    
+
+
+
 
   return (
     <div className="mt-8">
